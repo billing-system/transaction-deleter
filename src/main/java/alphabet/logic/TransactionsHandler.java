@@ -56,7 +56,7 @@ public class TransactionsHandler {
     }
 
     private void deleteTransactionsForBankAccounts(List<String> bankAccounts) {
-        List<BillingTransaction> transactionsToRemove = transactionRepository.findByDstBankAccountIn(bankAccounts);
-        transactionRepository.deleteAll(transactionsToRemove);
+        List<BillingTransaction> transactionsToDelete = transactionRepository.findByDstBankAccountIn(bankAccounts);
+        transactionRepository.deleteAll(transactionsToDelete);
     }
 }
